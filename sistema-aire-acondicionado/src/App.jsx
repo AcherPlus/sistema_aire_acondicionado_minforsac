@@ -1,16 +1,25 @@
 import './App.css'
+import MisClientes from './pages/MisClientes'
+import DatosCliente from './pages/DatosCliente'
+import CrearReporte from './pages/CrearReporte'
+import ModalCrearCliente from './components/ModalCrearCliente'
+import ModalCrearCentroCosto from './components/ModalCrearCentroCosto'
+import ModalCrearSede from './components/ModalCrearSede'
+import ReporteExitoso from './pages/ReporteExitoso'
+import HistorialInventarios from './pages/HistorialInventarios'
 
 function App() {
   
   return (
     <>
-      <h1>Sistema de inventario de aire acondicionado</h1>
-      
-      <div className='input-group'>
-        <label>Agregar empresa</label>
-        <input type='text' className='form-control' placeholder='Nombre/Razón Social'></input>
-        <button className='btn'>Crear</button>
-      </div>
+      <MisClientes/>
+      {/* <DatosCliente/>
+      <CrearReporte/>
+      <ModalCrearCliente/>
+      <ModalCrearCentroCosto/>
+      <ModalCrearSede />
+      <ReporteExitoso />
+      <HistorialInventarios /> */}
     </>
   )
 }
