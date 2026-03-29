@@ -13,13 +13,13 @@ function App() {
   return (
     <>
       <MisClientes/>
-      {/* <DatosCliente/>
-      <CrearReporte/>
-      <ModalCrearCliente/>
-      <ModalCrearCentroCosto/>
-      <ModalCrearSede />
-      <ReporteExitoso />
-      <HistorialInventarios /> */}
+      {/* <DatosCliente/> */}
+      {/* <CrearReporte/> */}
+      {/* <ModalCrearCliente/> */}
+      {/* <ModalCrearCentroCosto/> */}
+      {/* <ModalCrearSede /> */}
+      {/* <ReporteExitoso /> */}
+      {/* <HistorialInventarios /> */}
     </>
   )
 }

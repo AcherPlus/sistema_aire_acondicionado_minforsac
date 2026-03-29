@@ -6,16 +6,24 @@ function CrearReporte() {
           <>
                <h1>Crear reporte</h1>
 
-               <h4>Aires acondicionados</h4>
-               <button className="btn btn-ligth">
-                    +
-               </button>
+               <div className="row">
+                    <div className="col-2">
+                         <h4>Aires acondicionados</h4>
+                    </div>
+                    <div className="col-2">
+                         <button className="btn btn-primary">
+                              +
+                         </button>
+                    </div>
+               </div>
 
                <CardAireAconcionado />
 
+               <button className="btn btn-light">Crear reporte</button>
+
                <FormAgregarAireAcondicionado />
 
-               <button className="btn btn-light">Crear reporte</button>
+               
           </>
      )
 }

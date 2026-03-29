@@ -1,0 +1,18 @@
+.card{
+     background-color: #0D4870 !important;
+     border-radius: 1em !important;
+}
+
+th, td{
+    background-color: #0D4870 !important;
+    color: white !important;
+}
+
+.card-title, .card-text, .card-subtitle, .form-label{
+     color: white !important;
+}
+
+.card-link{
+     width: 100%;
+     font-weight: bold !important;
+}
