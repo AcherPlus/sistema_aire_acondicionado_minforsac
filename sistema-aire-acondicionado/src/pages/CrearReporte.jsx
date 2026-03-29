@@ -7,7 +7,7 @@ function CrearReporte() {
                <h1>Crear reporte</h1>
 
                <div className="row">
-                    <div className="col-2">
+                    <div className="col-3">
                          <h4>Aires acondicionados</h4>
                     </div>
                     <div className="col-2">

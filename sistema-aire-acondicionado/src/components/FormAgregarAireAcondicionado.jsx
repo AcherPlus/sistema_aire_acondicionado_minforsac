@@ -215,7 +215,7 @@ function FormAgregarAireAcondicionado(){
                          </div>
 
                          <div className="col-12 d-flex justify-content-center">
-                              <button type="submit" className="btn btn-primary">Agregar</button>
+                              <button type="submit" className="btn btn-light">Agregar</button>
                          </div>
                     </form>
                </div>

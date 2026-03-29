@@ -12,14 +12,16 @@ function App() {
   
   return (
     <>
-      <MisClientes/>
-      {/* <DatosCliente/> */}
-      {/* <CrearReporte/> */}
-      {/* <ModalCrearCliente/> */}
-      {/* <ModalCrearCentroCosto/> */}
-      {/* <ModalCrearSede /> */}
-      {/* <ReporteExitoso /> */}
-      {/* <HistorialInventarios /> */}
+      <div className="container">
+        {/* <MisClientes/> */}
+        {/* <DatosCliente/> */}
+        {/* <CrearReporte/> */}
+        {/* <ModalCrearCliente/> */}
+        {/* <ModalCrearCentroCosto/> */}
+        {/* <ModalCrearSede /> */}
+        {/* <ReporteExitoso /> */}
+        <HistorialInventarios />
+      </div>
     </>
   )
 }
