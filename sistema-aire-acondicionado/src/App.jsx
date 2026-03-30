@@ -12,11 +12,11 @@ function App() {
   return (
     <>
       <div className="container vh-100">
-        {/* <MisClientes/>
+        <MisClientes/>
         <DatosCliente/>
-        <CrearReporte/> */}
+        <CrearReporte/>
         <ReporteExitoso />
-        {/* <HistorialInventarios /> */}
+        <HistorialInventarios />
       </div>
     </>
   )
