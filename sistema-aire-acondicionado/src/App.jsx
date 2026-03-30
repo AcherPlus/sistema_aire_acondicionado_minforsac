@@ -9,18 +9,14 @@ import ReporteExitoso from './pages/ReporteExitoso'
 import HistorialInventarios from './pages/HistorialInventarios'
 
 function App() {
-  
   return (
     <>
-      <div className="container">
-        {/* <MisClientes/> */}
-        {/* <DatosCliente/> */}
-        {/* <CrearReporte/> */}
-        {/* <ModalCrearCliente/> */}
-        {/* <ModalCrearCentroCosto/> */}
-        {/* <ModalCrearSede /> */}
-        {/* <ReporteExitoso /> */}
-        <HistorialInventarios />
+      <div className="container vh-100">
+        {/* <MisClientes/>
+        <DatosCliente/>
+        <CrearReporte/> */}
+        <ReporteExitoso />
+        {/* <HistorialInventarios /> */}
       </div>
     </>
   )

@@ -1,15 +1,15 @@
 function FormAgregarAireAcondicionado(){
      return (
           <>
-          <div className="card">
-               <div className="card-body">
+          <div className="card" style={{width: "100%"}}>
+               <div className="card-body m-3">
                     <h5 className="card-title">Agregar aire acondicionado</h5>
 
                     <form>
-                         <div className="mb-3">
-                              <h6 className="card-subtitle">1- Identificación</h6>
+                         <div className="my-3">
+                              <h6 className="card-subtitle mt-3">1- Identificación</h6>
                               
-                              <div className="row">
+                              <div className="row my-3">
                                    <div className="col-4 ">
                                         
                                         <input type="text" className="form-control" placeholder="Marca" id="exampleInputText1" aria-describedby="TextHelp"/>
@@ -19,7 +19,7 @@ function FormAgregarAireAcondicionado(){
                                    </div>
                                    <div className="col-4">
                                         <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
                                              Centro de costo
                                              </a>
 
@@ -43,7 +43,7 @@ function FormAgregarAireAcondicionado(){
 
                                    <div className="col-4">
                                         <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
                                              Tipo
                                              </a>
 
@@ -60,7 +60,7 @@ function FormAgregarAireAcondicionado(){
 
                                    <div className="col-4">
                                         <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
                                              Capacidad
                                              </a>
 
@@ -77,10 +77,10 @@ function FormAgregarAireAcondicionado(){
                               </div>
                          </div>
 
-                         <div className="mb-3">
-                              <h6 className="card-subtitle">2- Componentes</h6>
+                         <div className="my-3">
+                              <h6 className="card-subtitle mt-3">2- Componentes</h6>
                               
-                              <label htmlFor="exampleInputEmail1" className="form-label ">Condensador</label>
+                              <label htmlFor="exampleInputEmail1" className="form-label mt-3">Condensador</label>
 
                               <div className="row">
                                    <div className="col-4"> 
@@ -92,7 +92,7 @@ function FormAgregarAireAcondicionado(){
                                    </div>
                               </div>
 
-                              <label htmlFor="exampleInputEmail1" className="form-label">Evaporador</label>
+                              <label htmlFor="exampleInputEmail1" className="form-label mt-3">Evaporador</label>
                               
                               <div className="row">
                                    <div className="col-4">
@@ -106,13 +106,13 @@ function FormAgregarAireAcondicionado(){
                               </div>
                          </div>
 
-                         <div className="mb-3">
-                              <h6 className="card-subtitle">3- Reporte técnico</h6>
+                         <div className="my-3">
+                              <h6 className="card-subtitle mt-3">3- Reporte técnico</h6>
                               
-                              <div className="row">
+                              <div className="row my-3">
                                    <div className="col-4">
                                         <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
                                              Estado
                                              </a>
 
@@ -132,7 +132,7 @@ function FormAgregarAireAcondicionado(){
 
                                    <div className="col-4">
                                         <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
                                              Refrigeración
                                              </a>
 
@@ -149,7 +149,7 @@ function FormAgregarAireAcondicionado(){
 
                                    <div className="col-4">
                                         <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
                                              Voltaje del compresor
                                              </a>
 
@@ -184,7 +184,7 @@ function FormAgregarAireAcondicionado(){
 
                                    <div className="col-2">
                                         <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
                                              Presión
                                              </a>
 
@@ -205,12 +205,16 @@ function FormAgregarAireAcondicionado(){
                               </div>
                          </div>
 
-                         <div className="mb-3">
+                         <div className="my-3">
                               <h6 className="card-subtitle">4- Observaciones</h6>
 
-                              <div className="form-floating">
-                                   <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                                   <label htmlFor="floatingTextarea">Escriba aquí</label>
+                              <div className="row my-3">
+                                   <div className="col-12">
+                                        <div className="form-floating">
+                                        <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                        <label htmlFor="floatingTextarea">Escriba aquí</label>
+                                   </div>
+                                   </div>
                               </div>
                          </div>
 

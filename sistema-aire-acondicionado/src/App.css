@@ -3,6 +3,10 @@
      border-radius: 1em !important;
 }
 
+.btn {
+     border-radius: 1em !important;
+}
+
 th, td{
     background-color: #0D4870 !important;
     color: white !important;

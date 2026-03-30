@@ -4,8 +4,8 @@ function HistorialInventarios() {
                <h1>Historial de inventarios</h1>
 
                <div className="row">
-                    <div className="col-12">
-                         <table class="table table-primary">
+                    <div className="col-12 d-flex justify-content-center">
+                         <table class="table table-primary my-3" style={{width:"80%"}}>
                               <thead>
                                    <tr>
                                         <th scope="col">Fecha</th>
