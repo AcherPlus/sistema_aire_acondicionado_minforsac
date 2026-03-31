@@ -1,7 +1,27 @@
-import { Modal, Button } from "react-bootstrap";
+import Dropdown from "react-bootstrap/Dropdown"
+import DropdownButton from "react-bootstrap/DropdownButton";
 import { useState } from "react";
 
 function FormAgregarAireAcondicionado(){
+     
+     // PARA DROPDOWNS
+     const [dropdownTitles, setDropdownTitles] = useState({
+          centro_costo: 'Centro de costo',
+          tipo: 'Tipo',
+          capacidad: 'Capacidad',
+          estado: 'Estado',
+          refrigeracion: 'Refrigeración',
+          voltaje_compresor: 'Voltaje del compresor',
+          presion: 'Presión'
+     });
+
+     const handleSelect = (key, value) => {
+          setDropdownTitles((prev) => ({
+               ...prev,
+               [key]: value, // Updates only the key matched
+          }));
+     };
+       
      return (
           <>
           <div className="card" style={{width: "100%"}}>
@@ -19,20 +39,17 @@ function FormAgregarAireAcondicionado(){
                                         <input type="text" className="form-control" placeholder="Inventario" id="exampleInputText1" aria-describedby="TextHelp"/>
                                    </div>
                                    <div className="col-4">
-                                        <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
-                                             Centro de costo
-                                             </a>
-
-                                             <ul className="dropdown-menu">
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">Financiera Efectiva</a>
-                                                  </li>
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">Juntoz</a>
-                                                  </li>
-                                             </ul>
-                                        </div>
+                                        <DropdownButton id="drop-centro-costo" variant="light" title={dropdownTitles.centro_costo} onSelect={(e) => handleSelect('centro_costo', e)} style={{border: "1px solid black", borderRadius:"15px"}}>
+                                             <Dropdown.Item eventKey="Centro de costo 1">
+                                                  Centro de costo 1
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Centro de costo 2">
+                                                  Centro de costo 2
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Centro de costo 3">
+                                                  Centro de costo 3
+                                             </Dropdown.Item>
+                                        </DropdownButton>
                                    </div>
                               </div>
 
@@ -43,51 +60,43 @@ function FormAgregarAireAcondicionado(){
                                    </div>
 
                                    <div className="col-4">
-                                        <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
-                                             Tipo
-                                             </a>
-
-                                             <ul className="dropdown-menu">
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">Mini Split</a>
-                                                  </li>
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">Techo Pared</a>
-                                                  </li>
-                                             </ul>
-                                        </div>
+                                        <DropdownButton id="drop-tipo" variant="light" title={dropdownTitles.tipo} onSelect={(e) => handleSelect('tipo', e)} style={{border: "1px solid black", borderRadius:"15px"}}>
+                                             <Dropdown.Item eventKey="Tipo 1">
+                                                  Tipo 1
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Tipo 2">
+                                                  Tipo 2
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Tipo 3">
+                                                  Tipo 3
+                                             </Dropdown.Item>
+                                        </DropdownButton>
                                    </div>
 
                                    <div className="col-4">
-                                        <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
-                                             Capacidad
-                                             </a>
-
-                                             <ul className="dropdown-menu">
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">12K</a>
-                                                  </li>
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">18K</a>
-                                                  </li>
-                                             </ul>
-                                        </div>
+                                        <DropdownButton id="drop-capacidad" variant="light" title={dropdownTitles.capacidad} onSelect={(e) => handleSelect('capacidad', e)} style={{border: "1px solid black", borderRadius:"15px"}}>
+                                             <Dropdown.Item eventKey="Capacidad 1">
+                                                  Capacidad 1
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Capacidad 2">
+                                                  Capacidad 2
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Capacidad 3">
+                                                  Capacidad 3
+                                             </Dropdown.Item>
+                                        </DropdownButton>
                                    </div>
                               </div>
                          </div>
 
                          <div className="my-3">
                               <h6 className="card-subtitle mt-3">2- Componentes</h6>
-                              
                               <label htmlFor="exampleInputEmail1" className="form-label mt-3">Condensador</label>
 
                               <div className="row">
                                    <div className="col-4"> 
                                         <input type="text" className="form-control" placeholder="Modelo EC" />
                                    </div>
-
                                    <div className="col-4">
                                         <input type="text" className="form-control" placeholder="Modelo EC" />
                                    </div>
@@ -98,9 +107,7 @@ function FormAgregarAireAcondicionado(){
                               <div className="row">
                                    <div className="col-4">
                                         <input type="text" className="form-control" placeholder="Modelo UE" />
-                              
                                    </div>
-
                                    <div className="col-4">
                                         <input type="text" className="form-control" placeholder="Modelo UE" />
                                    </div>
@@ -109,63 +116,46 @@ function FormAgregarAireAcondicionado(){
 
                          <div className="my-3">
                               <h6 className="card-subtitle mt-3">3- Reporte técnico</h6>
-                              
                               <div className="row my-3">
                                    <div className="col-4">
-                                        <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
-                                             Estado
-                                             </a>
-
-                                             <ul className="dropdown-menu">
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">Operativo</a>
-                                                  </li>
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">Inoperativo</a>
-                                                  </li>
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">Operativo con Observación</a>
-                                                  </li>
-                                             </ul>
-                                        </div>
+                                        <DropdownButton id="drop-estado" variant="light" title={dropdownTitles.estado} onSelect={(e) => handleSelect('estado', e)} style={{border: "1px solid black", borderRadius:"15px"}}>
+                                             <Dropdown.Item eventKey="Estado 1">
+                                                  Estado 1
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Estado 2">
+                                                  Estado 2
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Estado 3">
+                                                  Estado 3
+                                             </Dropdown.Item>
+                                        </DropdownButton>
+                                   </div>
+                                   <div className="col-4">
+                                        <DropdownButton id="drop-refrigeracion" variant="light" title={dropdownTitles.refrigeracion} onSelect={(e) => handleSelect('refrigeracion', e)} style={{border: "1px solid black", borderRadius:"15px"}}>
+                                             <Dropdown.Item eventKey="Refrigeración 1">
+                                                  Refrigeración 1
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Refrigeración 2">
+                                                  Refrigeración 2
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Refrigeración 3">
+                                                  Refrigeración 3
+                                             </Dropdown.Item>
+                                        </DropdownButton>
                                    </div>
 
                                    <div className="col-4">
-                                        <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
-                                             Refrigeración
-                                             </a>
-
-                                             <ul className="dropdown-menu">
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">R-22</a>
-                                                  </li>
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">R40A</a>
-                                                  </li>
-                                             </ul>
-                                        </div>
-                                   </div>
-
-                                   <div className="col-4">
-                                        <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
-                                             Voltaje del compresor
-                                             </a>
-
-                                             <ul className="dropdown-menu">
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">1</a>
-                                                  </li>
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">1</a>
-                                                  </li>
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">3</a>
-                                                  </li>
-                                             </ul>
-                                        </div>
+                                        <DropdownButton id="drop-voltaje" variant="light" title={dropdownTitles.voltaje_compresor} onSelect={(e) => handleSelect('voltaje_compresor', e)} style={{border: "1px solid black", borderRadius:"15px"}}>
+                                             <Dropdown.Item eventKey="Voltaje de compresor 1">
+                                                  Voltaje de compresor 1
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Voltaje de compresor 2">
+                                                  Voltaje de compresor 2
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Voltaje de compresor 3">
+                                                  Voltaje de compresor 3
+                                             </Dropdown.Item>
+                                        </DropdownButton>
                                    </div>
                               </div>
                               
@@ -184,24 +174,21 @@ function FormAgregarAireAcondicionado(){
                                    </div>
 
                                    <div className="col-2">
-                                        <div className="dropdown">
-                                             <a className="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{width:"100%"}}>
-                                             Presión
-                                             </a>
-
-                                             <ul className="dropdown-menu">
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">LP</a>
-                                                  </li>
-                                                  <li>
-                                                       <a className="dropdown-item" href="#">HP</a>
-                                                  </li>
-                                             </ul>
-                                        </div>
+                                        <DropdownButton id="drop-presion" variant="light" title={dropdownTitles.presion} onSelect={(e) => handleSelect('presion', e)} style={{border: "1px solid black", borderRadius:"15px"}}>
+                                             <Dropdown.Item eventKey="Presión 1">
+                                                  Presión 1
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Presión 2">
+                                                  Presión 2
+                                             </Dropdown.Item>
+                                             <Dropdown.Item eventKey="Presión 3">
+                                                  Presión 3
+                                             </Dropdown.Item>
+                                        </DropdownButton>
                                    </div>
 
                                    <div className="col-4">
-                                        <input type="text" className="form-control" placeholder="Distancia de evaporador y compresor" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                                        <input type="text" className="form-control" placeholder="Distancia evaporador - compresor" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                                    </div> 
                               </div>
                          </div>

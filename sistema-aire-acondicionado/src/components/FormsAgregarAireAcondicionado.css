@@ -1,12 +1,12 @@
 .custom-form, .custom-form .modal-body {
-     width: 50rem;
+     width: 60rem;
      display: flex;
      justify-content: center;
      align-items: center;
 }
 
 .modal-content{
-     width: 50rem !important;
+     width: 60rem !important;
      background-color: transparent !important;
      border: 0px transparent !important;
 }

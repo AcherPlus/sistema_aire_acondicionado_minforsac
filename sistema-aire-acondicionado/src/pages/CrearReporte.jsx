@@ -15,20 +15,26 @@ function CrearReporte() {
      const handleShow = () => setShow(true);
 
      // PARA DROPDOWNS
-     const textoDropdownTipo = ["un cliente", "una sede"]
-     const [dropdownTitle, setDropdownTitle] = useState(`Seleccione`);
+     const [dropdownTitles, setDropdownTitles] = useState({
+          clientes: 'Seleccione un cliente',
+          sedes: 'Seleccione una sede'
+     });
 
-     const handleSelect = (eventKey, event) => {
-          setDropdownTitle(eventKey);
+     const handleSelect = (key, value) => {
+          setDropdownTitles((prev) => ({
+               ...prev,
+               [key]: value, // Updates only the key matched
+          }));
      };
      
      return(
           <>
                <h1>Crear reporte</h1>
                
-               <div className="row mb-3">
+               <div className="row my-3">
+                    <h4 className="mb-3">Datos generales</h4>
                     <div className="col-3">
-                         <DropdownButton id="cliente-dropdown" variant="light" title={dropdownTitle} onSelect={handleSelect}>
+                         <DropdownButton id="drop-cliente" variant="light" title={dropdownTitles.clientes} onSelect={(e) => handleSelect('clientes', e)} style={{border: "1px solid black", borderRadius:"15px"}}>
                               <Dropdown.Item eventKey="Cliente 1">
                                    Cliente 1
                               </Dropdown.Item>
@@ -39,49 +45,24 @@ function CrearReporte() {
                                    Cliente 3
                               </Dropdown.Item>
                          </DropdownButton>
-                         
-                         
-                         {/* <Dropdown title={dropdownTitle} onSelect={handleSelect}>
-                              <Dropdown.Toggle variant="light" id="dropdown-basic" style={{width: "100%", border:"1px solid black"}}>
-                                   Seleccione un cliente
-                              </Dropdown.Toggle>
-
-                              <Dropdown.Menu style={{width: "100%"}}>
-                                   <Dropdown.Item eventKey="Cliente 1">
-                                        Cliente 1
-                                   </Dropdown.Item>
-                                   <Dropdown.Item>
-                                        Cliente 2
-                                   </Dropdown.Item>
-                                   <Dropdown.Item>
-                                        Cliente 3
-                                   </Dropdown.Item>
-                              </Dropdown.Menu>
-                         </Dropdown> */}
                     </div>
                     <div className="col-3">
-                         <Dropdown>
-                              <Dropdown.Toggle variant="light" id="dropdown-basic" style={{width: "100%", border:"1px solid black"}}>
-                                   Seleccione una sede
-                              </Dropdown.Toggle>
-
-                              <Dropdown.Menu style={{width: "100%", border:"1px solid black"}}>
-                                   <Dropdown.Item>
-                                        Sede 1
-                                   </Dropdown.Item>
-                                   <Dropdown.Item>
-                                        Sede 2
-                                   </Dropdown.Item>
-                                   <Dropdown.Item>
-                                        Sede 3
-                                   </Dropdown.Item>
-                              </Dropdown.Menu>
-                         </Dropdown>
+                         <DropdownButton id="drop-sede" variant="light" title={dropdownTitles.sedes} onSelect={(e) => handleSelect('sedes', e)} style={{border: "1px solid black", borderRadius:"15px"}}>
+                              <Dropdown.Item eventKey="Sede 1">
+                                   Sede 1
+                              </Dropdown.Item>
+                              <Dropdown.Item eventKey="Sede 2">
+                                   Sede 2
+                              </Dropdown.Item>
+                              <Dropdown.Item eventKey="Sede 3">
+                                   Sede 3
+                              </Dropdown.Item>
+                         </DropdownButton>
                     </div>
                </div>
 
                <div className="row">
-                    <div className="col-4 d-flex">
+                    <div className="col-4 d-flex my-3">
                          <h4>Aires acondicionados</h4>
                          <Button onClick={handleShow} variant="primary" className="ms-3">
                               Agregar

@@ -25,3 +25,7 @@ th, td, .navbar, .navbar a, .navbar span{
      background-color: transparent;
      border: 0px transparent
 }
+
+.dropdown-toggle, .dropdown-menu{
+     width: 100% !important;
+}
