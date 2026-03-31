@@ -1,28 +1,31 @@
 import CardCliente from "../components/CardClientes";
 import ModalCrearCliente from "../components/ModalCrearCliente";
+import { Modal, Button } from "react-bootstrap";
+import { useState } from "react";
 
 function MisClientes() {
+     // Verificar si está abierto el modal
+     const [show, setShow] = useState(false);
+     
+     // Estados para cerrar y abrir el modal
+     const handleClose = () => setShow(false);
+     const handleShow = () => setShow(true);
+     
      return (
      <>
           <h1>Mis clientes</h1>
-
+          
           <div className="row mb-3">
                <div className="col-2">
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#clienteModal">
-                         Agregar cliente
-                    </button>
+                    <Button onClick={handleShow} variant="primary">Agregar cliente</Button>
                </div>
           </div>
 
-          <div class="modal fade" id="clienteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content" style={{backgroundColor: "transparent", border:"0px transparent"}}>
-                         <div class="modal-body d-flex justify-content-center align-items-center">
-                              <ModalCrearCliente />
-                         </div>
-                    </div>
-               </div>
-          </div>
+          <Modal show={show} onHide={handleClose} dialogClassName="custom-dialog">
+               <Modal.Body>
+                    <ModalCrearCliente />
+               </Modal.Body>
+          </Modal>
 
           <div className="row">
                <div className="col-3">

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function CardSede() {
      return (
      <>
@@ -7,9 +9,11 @@ function CardSede() {
                <p className="card-text">CALLE</p>
                <p className="card-text">DISTRITO</p>
                <p className="card-text">OFICINA - PISO</p>
-               <button className="btn btn-light card-link">
-                    Ver reportes
-               </button>
+               <Link to="/historial-inventarios">
+                    <button className="btn btn-light card-link">
+                         Ver reportes
+                    </button>
+               </Link>
                </div>
           </div>
      </>

@@ -2,39 +2,38 @@ import CardCentroCosto from "../components/CardCentrosCosto";
 import CardSede from "../components/CardSedes";
 import ModalCrearCentroCosto from "../components/ModalCrearCentroCosto";
 import ModalCrearSede from "../components/ModalCrearSede";
+import { Modal, Button } from "react-bootstrap";
+import Tab from 'react-bootstrap/Tab';
+import Tabs from "react-bootstrap/Tabs";
+import { useState } from "react";
 
 function DatosCliente() {
+     
+     // Verificar si está abierto el modal
+     const [show, setShow] = useState(false);
+     
+     // Estados para cerrar y abrir el modal
+     const handleClose = () => setShow(false);
+     const handleShow = () => setShow(true);
+
      return (
      <>
           <h1>GRUPO EFE</h1>
           
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-               <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Sedes</button>
-               </li>
-               <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Centros de costo</button>
-               </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-               <div class="tab-pane fade show active mt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <Tabs defaultActiveKey="sedes" className="mb-3" unmountOnExit>
+               <Tab eventKey="sedes" title="Sedes">
                     <div className="row mb-3">
                          <div className="col-2">
-                              <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sedeModal">
-                                   Agregar sede
-                              </button>
+                              <Button onClick={handleShow} variant="primary">Agregar sede</Button>
                          </div>
                     </div>
 
-                    <div class="modal fade" id="sedeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                         <div class="modal-dialog">
-                              <div class="modal-content" style={{backgroundColor: "transparent", border:"0px transparent"}}>
-                                   <div class="modal-body d-flex justify-content-center align-items-center">
-                                        <ModalCrearSede />
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
+                    <Modal show={show} onHide={handleClose} dialogClassName="custom-dialog">
+                         <Modal.Body>
+                              <ModalCrearSede />
+                         </Modal.Body>
+                    </Modal>
+
                     <div className="row mb-3">
                          <div className="col-3">
                               <CardSede />
@@ -49,45 +48,36 @@ function DatosCliente() {
                               <CardSede />
                          </div>
                     </div>
-               </div>
-               <div class="tab-pane fade mt-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+               </Tab>
+               <Tab eventKey="centros-costo" title="Centros de costo">
                     <div className="row mb-3">
                          <div className="col-3">
-                              <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#centroCostoModal">
-                                   Agregar centro de costo
-                              </button>
+                              <Button onClick={handleShow} variant="primary">Agregar centro de costo</Button>
                          </div>
                     </div>
 
-                    <div class="modal fade" id="centroCostoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                         <div class="modal-dialog">
-                              <div class="modal-content" style={{backgroundColor: "transparent", border:"0px transparent"}}>
-                                   <div class="modal-body d-flex justify-content-center align-items-center">
-                                        <ModalCrearCentroCosto />
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-                    
+                    <Modal show={show} onHide={handleClose} dialogClassName="custom-dialog">
+                         <Modal.Body>
+                              <ModalCrearCentroCosto />
+                         </Modal.Body>
+                    </Modal>
+
                     <div className="row mb-3">
                          <div className="col-3">
-                              <CardCentroCosto/>
+                              <CardCentroCosto />
                          </div>
                          <div className="col-3">
-                              <CardCentroCosto/>
+                              <CardCentroCosto />
                          </div>
                          <div className="col-3">
-                              <CardCentroCosto/>
+                              <CardCentroCosto />
                          </div>
                          <div className="col-3">
-                              <CardCentroCosto/>
+                              <CardCentroCosto />
                          </div>
                     </div>
-               </div>
-          </div>
-
-          
-          
+               </Tab>
+          </Tabs>       
      </>
      )
 }

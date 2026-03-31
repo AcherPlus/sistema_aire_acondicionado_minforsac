@@ -40,10 +40,10 @@ function CrearReporte() {
                     </button>
                </div>
 
-               <div class="modal fade modal-lg" id="sedeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                         <div class="modal-content" style={{backgroundColor: "transparent", border:"0px transparent", width:"50rem"}}>
-                              <div class="modal-body d-flex justify-content-center align-items-center" style={{width:"50rem"}}>
+               <div className="modal fade modal-lg" id="sedeModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div className="modal-dialog">
+                         <div className="modal-content" style={{backgroundColor: "transparent", border:"0px transparent", width:"50rem"}}>
+                              <div className="modal-body d-flex justify-content-center align-items-center" style={{width:"50rem"}}>
                                    <FormAgregarAireAcondicionado />
                               </div>
                          </div>

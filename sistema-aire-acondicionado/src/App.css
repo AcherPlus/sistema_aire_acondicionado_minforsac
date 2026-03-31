@@ -20,3 +20,8 @@ th, td{
      width: 100%;
      font-weight: bold !important;
 }
+
+.custom-dialog .modal-content{
+     background-color: transparent;
+     border: 0px transparent
+}
