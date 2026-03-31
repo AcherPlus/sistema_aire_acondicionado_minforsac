@@ -13,11 +13,14 @@ function MisClientes() {
      
      return (
      <>
-          <h1>Mis clientes</h1>
           
+
           <div className="row mb-3">
-               <div className="col-2">
-                    <Button onClick={handleShow} variant="primary">Agregar cliente</Button>
+               <div className="col-4 d-flex">
+                    <h1>Mis clientes</h1>
+                    <div className="d-flex align-items-center">
+                         <Button onClick={handleShow} variant="primary" className="ms-3">Agregar cliente</Button>
+                    </div>
                </div>
           </div>
 
@@ -28,16 +31,16 @@ function MisClientes() {
           </Modal>
 
           <div className="row">
-               <div className="col-3">
+               <div className="col-3 d-flex justify-content-center">
                     <CardCliente />
                </div>
-               <div className="col-3">
+               <div className="col-3 d-flex justify-content-center">
                     <CardCliente />
                </div>
-               <div className="col-3">
+               <div className="col-3 d-flex justify-content-center">
                     <CardCliente />
                </div>
-               <div className="col-3">
+               <div className="col-3 d-flex justify-content-center">
                     <CardCliente />
                </div>
           </div>

@@ -7,7 +7,7 @@
      border-radius: 1em !important;
 }
 
-th, td{
+th, td, .navbar, .navbar a, .navbar span{
     background-color: #0D4870 !important;
     color: white !important;
 }

@@ -35,16 +35,16 @@ function DatosCliente() {
                     </Modal>
 
                     <div className="row mb-3">
-                         <div className="col-3">
+                         <div className="col-3 d-flex justify-content-center">
                               <CardSede />
                          </div>
-                         <div className="col-3">
+                         <div className="col-3 d-flex justify-content-center">
                               <CardSede />
                          </div>
-                         <div className="col-3">
+                         <div className="col-3 d-flex justify-content-center">
                               <CardSede />
                          </div>
-                         <div className="col-3">
+                         <div className="col-3 d-flex justify-content-center">
                               <CardSede />
                          </div>
                     </div>
@@ -52,7 +52,7 @@ function DatosCliente() {
                <Tab eventKey="centros-costo" title="Centros de costo">
                     <div className="row mb-3">
                          <div className="col-3">
-                              <Button onClick={handleShow} variant="primary">Agregar centro de costo</Button>
+                              <Button onClick={handleShow} variant="primary">Agregar centro</Button>
                          </div>
                     </div>
 
@@ -63,16 +63,16 @@ function DatosCliente() {
                     </Modal>
 
                     <div className="row mb-3">
-                         <div className="col-3">
+                         <div className="col-3 d-flex justify-content-center">
                               <CardCentroCosto />
                          </div>
-                         <div className="col-3">
+                         <div className="col-3 d-flex justify-content-center">
                               <CardCentroCosto />
                          </div>
-                         <div className="col-3">
+                         <div className="col-3 d-flex justify-content-center">
                               <CardCentroCosto />
                          </div>
-                         <div className="col-3">
+                         <div className="col-3 d-flex justify-content-center">
                               <CardCentroCosto />
                          </div>
                     </div>

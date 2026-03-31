@@ -1,10 +1,11 @@
+import { Modal, Button } from "react-bootstrap";
+import { useState } from "react";
+
 function FormAgregarAireAcondicionado(){
      return (
           <>
           <div className="card" style={{width: "100%"}}>
                <div className="card-body m-3">
-                    <h5 className="card-title">Agregar aire acondicionado</h5>
-
                     <form>
                          <div className="my-3">
                               <h6 className="card-subtitle mt-3">1- Identificación</h6>

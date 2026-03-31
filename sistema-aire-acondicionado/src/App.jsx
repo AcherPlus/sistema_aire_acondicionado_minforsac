@@ -5,11 +5,32 @@ import CrearReporte from './pages/CrearReporte'
 import ReporteExitoso from './pages/ReporteExitoso'
 import HistorialInventarios from './pages/HistorialInventarios'
 import { Routes, Route } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
 
 function App() {
   return (
     <>
-      <div className="container vh-100">
+      <Navbar className='ps-3'>
+        <Navbar.Brand>
+          Minforsac
+        </Navbar.Brand>
+        <Nav>
+          <Nav.Link href="/">
+            Mis clientes
+          </Nav.Link>
+          
+          <Nav.Link href="/crear-reporte">
+            Crear reporte
+          </Nav.Link>
+
+          <Nav.Link href="/historial-inventarios">
+            Historial de inventarios
+          </Nav.Link>
+        </Nav>
+      </Navbar>
+      
+      <div className="container vh-100 mt-3">
         <Routes>
           <Route path="/" element={<MisClientes/>}/>
           <Route path="/cliente" element={<DatosCliente/>}/>

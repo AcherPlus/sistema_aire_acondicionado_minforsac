@@ -3,7 +3,7 @@ function ModalCrearCentroCosto(){
           <>
                <div className="card" style={{width: "27rem"}}>
                     <div className="card-body">
-                         <h5 className="card-title">Nueva centro de costo</h5>
+                         <h5 className="card-title">Nuevo centro de costo</h5>
                          <form action="">
                               <div className="my-3">
                                    <input type="text" className="form-control" placeholder="Nombre/Razón Social"/>
