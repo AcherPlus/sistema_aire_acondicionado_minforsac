@@ -11,11 +11,10 @@ function CardAireAconcionado() {
      // Verificar si está abierto el modal1
      const [showModalA, setShowModalA] = useState(false);
      const [showModalB, setShowModalB] = useState(false);
-     
-     
+
      return (
           <>
-               <Card style={{width: "18rem"}} unmountedExit>
+               <Card style={{width: "18rem"}}>
                     <Card.Body>
                          <Card.Title>General Eletric - Mini Split</Card.Title>
                          <Card.Text><b>Ubicación:</b> Oficina 1101A</Card.Text>

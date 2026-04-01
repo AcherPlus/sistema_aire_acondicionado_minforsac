@@ -1,4 +1,10 @@
 function ModalCrearSede(){
+     
+     const submitAgregarSede = (e) => {
+          e.preventDefault();
+          console.log("Botón funcionando");
+     }
+     
      return (
           <>
                <div className="card" style={{width: "27rem"}}>
@@ -22,7 +28,7 @@ function ModalCrearSede(){
                               </div>
                               
                               <div className="d-flex justify-content-center">
-                                   <button className="btn btn-light card-link" style={{width: "50%"}}>
+                                   <button type="submit" className="btn btn-light card-link" style={{width: "50%"}} onClick={submitAgregarSede}>
                                         Crear
                                    </button>
                               </div>

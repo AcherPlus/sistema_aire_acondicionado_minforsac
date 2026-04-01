@@ -1,4 +1,9 @@
 function ModalCrearCentroCosto(){
+     const submitAgregarCentroCosto = (e) => {
+          e.preventDefault();
+          console.log("Botón funcionando");
+     }
+     
      return (
           <>
                <div className="card" style={{width: "27rem"}}>
@@ -9,7 +14,7 @@ function ModalCrearCentroCosto(){
                                    <input type="text" className="form-control" placeholder="Nombre/Razón Social"/>
                               </div>
                               <div className="my-3 d-flex justify-content-center" >
-                                   <button className="btn btn-light card-link" style={{width: "50%"}}>
+                                   <button className="btn btn-light card-link" style={{width: "50%"}} onClick={submitAgregarCentroCosto}>
                                         Crear
                                    </button>
                               </div>
