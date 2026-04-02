@@ -1,11 +1,19 @@
 function HistorialInventarios() {
+     
+     const submitVerInventario = (e) => {
+        e.preventDefault();
+        console.log("Botón funcionando");
+    }
+     
      return(
           <>
                <h1>Historial de inventarios</h1>
 
+               
+
                <div className="row">
                     <div className="col-12 d-flex justify-content-center">
-                         <table class="table table-primary my-3" style={{width:"80%"}}>
+                         <table className="table table-primary my-3" style={{width:"80%"}}>
                               <thead>
                                    <tr>
                                         <th scope="col">Fecha</th>
@@ -22,7 +30,7 @@ function HistorialInventarios() {
                                         <td>Sede San Isidro</td>
                                         <td>Financiera Efectiva, Juntoz</td>
                                         <td>
-                                             <button className="btn btn-light">Ver inventario</button>
+                                             <button className="btn btn-light" onClick={submitVerInventario}>Ver inventario</button>
                                         </td>
                                    </tr>
                               </tbody>

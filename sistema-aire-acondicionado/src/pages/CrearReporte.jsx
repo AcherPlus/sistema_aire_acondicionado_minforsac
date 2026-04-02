@@ -23,9 +23,14 @@ function CrearReporte() {
      const handleSelect = (key, value) => {
           setDropdownTitles((prev) => ({
                ...prev,
-               [key]: value, // Updates only the key matched
+               [key]: value,
           }));
      };
+
+     const submitCrearReporte = (e) => {
+          e.preventDefault();
+          console.log("Botón funcionando");
+     }
      
      return(
           <>
@@ -92,7 +97,7 @@ function CrearReporte() {
                </div>
 
                <div className="d-flex justify-content-center">
-                    <button className="btn btn-light my-3" style={{border: "1px solid black"}}>
+                    <button className="btn btn-light my-3" style={{border: "1px solid black"}} onClick={submitCrearReporte}>
                          Crear reporte
                     </button>
                </div>

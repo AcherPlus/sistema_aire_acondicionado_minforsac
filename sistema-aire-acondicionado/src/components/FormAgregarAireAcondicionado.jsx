@@ -21,7 +21,12 @@ function FormAgregarAireAcondicionado(){
                [key]: value, // Updates only the key matched
           }));
      };
-       
+     
+     const submitAgregarAireAcondicionado = (e) => {
+          e.preventDefault();
+          console.log("Botón funcionando");
+     }
+
      return (
           <>
           <div className="card" style={{width: "100%"}}>
@@ -184,7 +189,7 @@ function FormAgregarAireAcondicionado(){
                                              <Dropdown.Item eventKey="Presión 3">
                                                   Presión 3
                                              </Dropdown.Item>
-                                        </DropdownButton>
+                                        </DropdownButton>     
                                    </div>
 
                                    <div className="col-4">
@@ -207,7 +212,7 @@ function FormAgregarAireAcondicionado(){
                          </div>
 
                          <div className="col-12 d-flex justify-content-center">
-                              <button type="submit" className="btn btn-light">Agregar</button>
+                              <button type="submit" className="btn btn-light" onClick={submitAgregarAireAcondicionado}>Agregar</button>
                          </div>
                     </form>
                </div>
