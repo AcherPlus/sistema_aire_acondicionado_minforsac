@@ -1,3 +1,6 @@
+import { Button } from "react-bootstrap";
+import './CardsAireAcondicionado.css';
+
 function CardAireAconcionado() {
      return (
           <>
@@ -9,13 +12,14 @@ function CardAireAconcionado() {
                     <p className="card-text"><b>ID:</b> 1234567890</p>
                     <p className="card-text"><b>Modelo:</b> ABCDEFGHIJK</p>
                     <p className="card-text"><b>Obs:</b> Manto Preventivo</p>
-                    <div className="d-flex">
-                         <button className="btn btn-light card-link" style={{width: "50%"}}>
-                         <i className="bi bi-pencil-square"></i>
-                         </button>
-                         <button className="btn btn-light card-link" style={{width: "50%"}}>
-                         <i className="bi bi-trash-fill"></i>
-                         </button>
+                    <div className="d-flex justify-content-between">
+                         <Button variant="light" className="button-edit">
+                              <i className="bi bi-pencil-square"></i>
+                         </Button>
+
+                         <Button variant="light" className="button-delete">
+                              <i className="bi bi-trash-fill"></i>
+                         </Button>
                     </div>
                     </div>
                </div>

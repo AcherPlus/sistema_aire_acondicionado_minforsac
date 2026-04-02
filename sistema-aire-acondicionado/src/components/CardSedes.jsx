@@ -9,11 +9,18 @@ function CardSede() {
                <p className="card-text">CALLE</p>
                <p className="card-text">DISTRITO</p>
                <p className="card-text">OFICINA - PISO</p>
-               <Link to="/historial-inventarios">
-                    <button className="btn btn-light card-link">
-                         Ver reportes
-                    </button>
-               </Link>
+               <div className='d-flex justify-content-between'>
+                    <Link to="/historial-inventarios">
+                         <button className="btn btn-light card-link">
+                              Ver reportes
+                         </button>
+                    </Link>
+                    <Link to="/crear-reporte">
+                         <button className="btn btn-light card-link">
+                              Crear reporte
+                         </button>
+                    </Link>
+               </div>
                </div>
           </div>
      </>
