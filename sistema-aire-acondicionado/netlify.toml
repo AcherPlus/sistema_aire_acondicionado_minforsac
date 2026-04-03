@@ -1,4 +1,4 @@
 [build]
   base = "sistema-aire-acondicionado/"
-  publish = "sistema-aire-acondicionado/dist/"
+  publish = "dist"
   command = "npm run build"
