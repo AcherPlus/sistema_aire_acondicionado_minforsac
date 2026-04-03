@@ -1,0 +1,31 @@
+.card{
+     background-color: #0D4870 !important;
+     border-radius: 1em !important;
+}
+
+.btn {
+     border-radius: 1em !important;
+}
+
+th, td, .navbar, .navbar a, .navbar span{
+    background-color: #0D4870 !important;
+    color: white !important;
+}
+
+.card-title, .card-text, .card-subtitle, .form-label{
+     color: white !important;
+}
+
+.card-link{
+     width: 100%;
+     font-weight: bold !important;
+}
+
+.custom-dialog .modal-content{
+     background-color: transparent;
+     border: 0px transparent
+}
+
+.dropdown-toggle, .dropdown-menu{
+     width: 100% !important;
+}
