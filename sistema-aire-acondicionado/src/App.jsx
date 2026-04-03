@@ -21,7 +21,7 @@ function App() {
           </Nav.Link>
           
           <Nav.Link href="/crear-reporte">
-            Crear reporte
+            Crear reportes
           </Nav.Link>
 
           <Nav.Link href="/historial-inventarios">
