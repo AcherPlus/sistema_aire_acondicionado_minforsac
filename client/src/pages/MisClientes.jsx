@@ -42,8 +42,6 @@ function MisClientes() {
      // Lógica de filtrado (Slicing)
      const indexOfLastItem = currentPage * itemsPerPage;
      const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-     const currentItems = clientes.slice(indexOfFirstItem, indexOfLastItem);
-     const totalPages = Math.ceil(clientes.length / itemsPerPage);
 
      // Ejecutar fuera del componente de paginación
      const handlePageChange = (page) => {
@@ -54,52 +52,13 @@ function MisClientes() {
      // ------------------------------------------------
 
      /* PARA LA BÚSQUEDA */
-     const [query, setQuery] = useState('');
+     const [busqueda, setBusqueda] = useState('');
      // Lógica de filtrado
-     const filteredData = clientes.filter(item => item.nombre.toLowerCase().includes(query.toLowerCase()));
+     const filteredData = clientes.filter(item => item.nombre.toLowerCase().includes(busqueda.toLowerCase()));
+     const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
      // ------------------------------------------------
-
-     /*
-          import React, { useState, useEffect } from 'react';
-
-          function App() {
-          const [datos, setDatos] = useState([]); // Datos de la API
-          const [busqueda, setBusqueda] = useState(""); // Texto del buscador
-
-          useEffect(() => {
-          // Llamada directa a la API al montar el componente
-          fetch('https://typicode.com')
-               .then(response => response.json())
-               .then(data => setDatos(data));
-          }, []);
-          }
-
-           // Lógica de filtrado
-          const resultadosFiltrados = datos.filter((item) =>
-          item.name.toLowerCase().includes(busqueda.toLowerCase())
-          );
-
-            return (
-               <div style={{ padding: "20px" }}>
-                    <input
-                    type="text"
-                    placeholder="Buscar por nombre..."
-                    value={busqueda}
-                    onChange={(e) => setBusqueda(e.target.value)} // Actualiza el término de búsqueda
-                    />
-
-                    <ul>
-                    {resultadosFiltrados.map(user => (
-                         <li key={user.id}>{user.name}</li>
-                    ))}
-                    </ul>
-               </div>
-               );
-               }
-
-               export default App;
-     */
 
      return (
           <>
@@ -120,7 +79,7 @@ function MisClientes() {
 
                <div className="row mb-3 d-flex justify-content-center">
                     <div className="col-8 mb-3 ">
-                         <BarraBusqueda onSearch={setQuery} />
+                         <BarraBusqueda valor={busqueda} onChange={setBusqueda} />
                     </div>
                </div>
 

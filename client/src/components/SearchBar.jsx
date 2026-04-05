@@ -1,4 +1,4 @@
-function BarraBusqueda({onSearch}) {
+function BarraBusqueda({valor, onChange}) {
      
      return (
           <>
@@ -6,7 +6,8 @@ function BarraBusqueda({onSearch}) {
                className="form-control me-2"
                type="text"
                placeholder="Buscar"
-               onChange={(e) => onSearch(e.target.value)}/>
+               value={valor}
+               onChange={(e) => onChange(e.target.value)}/>
           </>
      )
 }
