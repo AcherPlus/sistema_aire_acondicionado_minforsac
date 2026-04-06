@@ -4,6 +4,7 @@ import { Modal, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import PaginacionAvanzada from "../components/Pagination";
 import BarraBusqueda from "../components/SearchBar";
+import { useNavigate } from "react-router-dom";
 
 function MisClientes() {
      // ------------------------------------------------
@@ -60,6 +61,13 @@ function MisClientes() {
 
      // ------------------------------------------------
 
+     /* PARA OBTENER LOS DATOS DE MIS CLIENTES Y ENVIARLOS A DATOS CLIENTE */
+     const navigate = useNavigate();
+     const enviarDatosCliente = (nombre, ruc, direccion, cliente_id) => {
+          navigate('/cliente/:id', { state: {nombre: nombre, numero_documento: ruc, direccion: direccion, cliente_id: cliente_id}});
+     }
+
+
      return (
           <>
                <div className="row">
@@ -88,7 +96,7 @@ function MisClientes() {
                     {currentItems.map(c => {
                          return (
                               <div className="col-12 col-md-6 col-lg-4 mb-3 d-flex justify-content-center" key={c.cliente_id}>
-                                   <CardCliente nombre={c.nombre} direccion={c.direccion_principal} numero={c.numero_documento} />
+                                   <CardCliente nombre={c.nombre} direccion={c.direccion_principal} numero={c.numero_documento} onClick={() => enviarDatosCliente(c.nombre, c.numero_documento, c.direccion_principal, c.cliente_id)}/>
                               </div>
                          )
                     })}

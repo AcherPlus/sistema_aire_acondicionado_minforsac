@@ -33,7 +33,7 @@ function App() {
       <div className="container vh-100 mt-3">
         <Routes>
           <Route path="/" element={<MisClientes/>}/>
-          <Route path="/cliente" element={<DatosCliente/>}/>
+          <Route path="/cliente/:id" element={<DatosCliente/>}/>
           <Route path="/crear-reporte" element={<CrearReporte/>}/> 
           <Route path="/reporte-exitoso" element={<ReporteExitoso/>}/>
           <Route path="/historial-inventarios" element={<HistorialInventarios />}/>

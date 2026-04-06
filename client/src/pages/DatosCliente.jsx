@@ -6,6 +6,8 @@ import { Modal, Button } from "react-bootstrap";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from "react-bootstrap/Tabs";
 import { useState } from "react";
+import { useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 
 function DatosCliente() {
      
@@ -16,9 +18,17 @@ function DatosCliente() {
      const handleClose = () => setShow(false);
      const handleShow = () => setShow(true);
 
+     /* RECOGER EL DATO DEL CLIENTE */
+     const location = useLocation();
+     const {nombre, numero_documento, direccion, cliente_id} = location.state || {}
+
+     useEffect(() => {
+          console.log("Datos recibidos:", { nombre, numero_documento, direccion });
+     }, []);
+
      return (
      <>
-          <h1>GRUPO EFE</h1>
+          <h1>{nombre}</h1>
           
           <Tabs defaultActiveKey="sedes" className="mb-3" unmountOnExit>
                <Tab eventKey="sedes" title="Sedes">
@@ -35,16 +45,7 @@ function DatosCliente() {
                     </Modal>
 
                     <div className="row mb-3">
-                         <div className="col-3 d-flex justify-content-center">
-                              <CardSede />
-                         </div>
-                         <div className="col-3 d-flex justify-content-center">
-                              <CardSede />
-                         </div>
-                         <div className="col-3 d-flex justify-content-center">
-                              <CardSede />
-                         </div>
-                         <div className="col-3 d-flex justify-content-center">
+                         <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
                               <CardSede />
                          </div>
                     </div>
