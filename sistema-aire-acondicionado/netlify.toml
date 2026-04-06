@@ -1,4 +1,0 @@
-[build]
-  base = "sistema-aire-acondicionado"
-  publish = "dist"
-  command = "npm run build"

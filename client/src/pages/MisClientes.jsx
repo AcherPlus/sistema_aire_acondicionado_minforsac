@@ -45,7 +45,7 @@ function MisClientes() {
 
      // Ejecutar fuera del componente de paginación
      const handlePageChange = (page) => {
-          console.log("Cambiando a la página: ", page);
+          // console.log("Cambiando a la página: ", page);
           setCurrentPage(page);
      }
 

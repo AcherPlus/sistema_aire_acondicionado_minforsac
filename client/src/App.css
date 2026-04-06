@@ -7,7 +7,7 @@
      border-radius: 1em !important;
 }
 
-th, td, .navbar, .navbar a, .navbar span{
+th, td, .navbar, .navbar a, .navbar span,  .active > .page-link {
     background-color: #0D4870 !important;
     color: white !important;
 }

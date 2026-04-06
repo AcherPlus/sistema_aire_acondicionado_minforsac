@@ -1,0 +1,36 @@
+### 
+GET http://localhost:3001/clientes
+
+### 
+GET http://localhost:3001/clientes/1
+
+###
+POST http://localhost:3001/clientes
+Content-Type: application/json
+
+{
+     "nombre": "Cliente 3",
+     "empresa": "Empresa 3"
+}
+
+### 
+GET http://localhost:3001/clientes
+
+###
+PUT http://localhost:3001/clientes/1
+Content-Type: application/json
+
+{
+     "nombre": "Enmanuel",
+     "empresa": "Minforsac"
+}
+
+### 
+GET http://localhost:3001/clientes
+
+###
+DELETE http://localhost:3001/clientes/2
+Content-Type: application/json
+
+### 
+GET http://localhost:3001/clientes
