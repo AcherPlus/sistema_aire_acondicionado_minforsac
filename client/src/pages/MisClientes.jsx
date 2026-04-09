@@ -21,7 +21,8 @@ function MisClientes() {
      /* PARA LOS CLIENTES */
      const [clientes, setClientes] = useState([]);
 
-     useEffect(() => {
+     // Función para obtener los clientes
+     const obtenerClientes = () => {
           fetch('http://localhost:3001/clientes')
                .then(res => {
                     if (res.status === 204) return [];
@@ -31,6 +32,10 @@ function MisClientes() {
                     setClientes(data)
                })
                .catch(err => console.error("Error cargando clientes: ", err));
+     }
+
+     useEffect(() => {
+          obtenerClientes();
      }, []);
 
      // ------------------------------------------------
@@ -64,9 +69,8 @@ function MisClientes() {
      /* PARA OBTENER LOS DATOS DE MIS CLIENTES Y ENVIARLOS A DATOS CLIENTE */
      const navigate = useNavigate();
      const enviarDatosCliente = (nombre, ruc, direccion, cliente_id) => {
-          navigate('/cliente/:id', { state: {nombre: nombre, numero_documento: ruc, direccion: direccion, cliente_id: cliente_id}});
+          navigate('/cliente/:id', { state: { nombre: nombre, numero_documento: ruc, direccion: direccion, cliente_id: cliente_id } });
      }
-
 
      return (
           <>
@@ -81,7 +85,7 @@ function MisClientes() {
 
                <Modal show={show} onHide={handleClose} dialogClassName="custom-dialog">
                     <Modal.Body>
-                         <ModalCrearCliente />
+                         <ModalCrearCliente onClose={handleClose} onActualizar={obtenerClientes} />
                     </Modal.Body>
                </Modal>
 
@@ -96,7 +100,7 @@ function MisClientes() {
                     {currentItems.map(c => {
                          return (
                               <div className="col-12 col-md-6 col-lg-4 mb-3 d-flex justify-content-center" key={c.cliente_id}>
-                                   <CardCliente nombre={c.nombre} direccion={c.direccion_principal} numero={c.numero_documento} onClick={() => enviarDatosCliente(c.nombre, c.numero_documento, c.direccion_principal, c.cliente_id)}/>
+                                   <CardCliente nombre={c.nombre} direccion={c.direccion_principal} numero={c.numero_documento} onClick={() => enviarDatosCliente(c.nombre, c.numero_documento, c.direccion_principal, c.cliente_id)} />
                               </div>
                          )
                     })}
