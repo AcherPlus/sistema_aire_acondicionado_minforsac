@@ -6,7 +6,10 @@ const app = express();
 app.use(cors())
 app.use(express.json())  // Middleware
 
-// Obtener datos
+// -------------------------------------------------------
+/* TABLA CLIENTES */
+
+// Obtener datos Clientes
 app.get('/clientes', async (req, res) => {
      const { data, error } = await supabase
           .from('Clientes')
@@ -21,6 +24,7 @@ app.get('/clientes', async (req, res) => {
      console.log(data)
 });
 
+// Agregar cliente
 app.post('/clientes', async (req, res) => {
      const {nombre, direccion_principal, tipo_documento, numero_documento} = req.body;
      
@@ -43,5 +47,31 @@ app.post('/clientes', async (req, res) => {
      console.log("Cliente creado: ", data);
      res.status(201).json(data);
 })
+
+// -------------------------------------------------------
+/* TABLA SEDES */
+// Obtener datos Sedes
+app.get('/cliente/:id', async (req, res) => {
+     
+     const { id } = req.params;
+
+     const { data, error } = await supabase
+          .from('Sedes')
+          .select(`
+               sede_id,
+               nombre,
+               direccion,
+               distrito,
+               oficina_piso,
+               Clientes!inner(cliente_id)
+          `)
+          .eq('cliente_id', id);
+
+     if (error) return res.status(400).json({error: error.message});
+
+     res.json(data);
+     console.log(data)
+});
+
 
 app.listen(3001, () => console.log('Servidor corriendo en el puerto 3001'));

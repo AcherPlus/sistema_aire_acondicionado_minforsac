@@ -69,7 +69,7 @@ function MisClientes() {
      /* PARA OBTENER LOS DATOS DE MIS CLIENTES Y ENVIARLOS A DATOS CLIENTE */
      const navigate = useNavigate();
      const enviarDatosCliente = (nombre, ruc, direccion, cliente_id) => {
-          navigate('/cliente/:id', { state: { nombre: nombre, numero_documento: ruc, direccion: direccion, cliente_id: cliente_id } });
+          navigate(`/cliente/${cliente_id}`, { state: { nombre: nombre, numero_documento: ruc, direccion: direccion, cliente_id: cliente_id } });
      }
 
      return (
@@ -94,7 +94,6 @@ function MisClientes() {
                          <BarraBusqueda valor={busqueda} onChange={setBusqueda} />
                     </div>
                </div>
-
 
                <div className="row">
                     {currentItems.map(c => {

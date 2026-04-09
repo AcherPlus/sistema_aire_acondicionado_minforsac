@@ -2,6 +2,7 @@ import CardCentroCosto from "../components/CardCentrosCosto";
 import CardSede from "../components/CardSedes";
 import ModalCrearCentroCosto from "../components/ModalCrearCentroCosto";
 import ModalCrearSede from "../components/ModalCrearSede";
+import "./DatosClientes.css";
 import { Modal, Button } from "react-bootstrap";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from "react-bootstrap/Tabs";
@@ -20,10 +21,29 @@ function DatosCliente() {
 
      /* RECOGER EL DATO DEL CLIENTE */
      const location = useLocation();
-     const { nombre, numero_documento, direccion, cliente_id } = location.state || {}
+     const { nombre, cliente_id } = location.state || {}
+
+     /* PARA LOS CLIENTES */
+     const [sedes, setSedes] = useState([]);
+
+     // Función para obtener los clientes
+     const obtenerSedesCliente = () => {
+          fetch(`http://localhost:3001/cliente/${cliente_id}`)
+               .then(res => {
+                    if (res.status === 204) return [];
+                    return res.json();
+               })
+               .then(data => {
+                    setSedes(data)
+               })
+               .catch(err => console.error("Error cargando clientes: ", err));
+     }
+
+     console.log(sedes);
 
      useEffect(() => {
-          console.log("Datos recibidos:", { nombre, numero_documento, direccion });
+          // console.log("Datos recibidos:", { nombre, numero_documento, direccion });
+          obtenerSedesCliente();
      }, []);
 
      return (
@@ -45,9 +65,13 @@ function DatosCliente() {
                          </Modal>
 
                          <div className="row mb-3">
-                              <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
-                                   <CardSede />
-                              </div>
+                              {sedes.map(s => {
+                                   return (
+                                        <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center" key={s.sede_id}>
+                                             <CardSede sede={s}/>
+                                        </div>
+                                   )
+                              })}
                          </div>
                     </Tab>
                     <Tab eventKey="centros-costo" title="Centros de costo">

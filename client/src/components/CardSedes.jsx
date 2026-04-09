@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 
-function CardSede() {
+function CardSede({sede}) {
+     
      return (
      <>
           <div className="card" style={{width: "18rem"}}>
                <div className="card-body">
-               <h5 className="card-title">OFICINA EL ANTIDERBY</h5>
-               <p className="card-text">CALLE</p>
-               <p className="card-text">DISTRITO</p>
-               <p className="card-text">OFICINA - PISO</p>
+               <h5 className="card-title">{sede.nombre}</h5>
+               <p className="card-text">{sede.direccion}</p>
+               <p className="card-text">{sede.distrito}</p>
+               <p className="card-text">{sede.oficina_piso}</p>
                <div className='d-flex justify-content-between'>
                     <Link to="/historial-inventarios">
                          <button className="btn btn-light card-link">

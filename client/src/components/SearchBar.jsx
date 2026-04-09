@@ -7,6 +7,7 @@ function BarraBusqueda({valor, onChange}) {
                type="text"
                placeholder="Buscar"
                value={valor}
+               style={{border: "1px solid black"}}
                onChange={(e) => onChange(e.target.value)}/>
           </>
      )
